@@ -4,9 +4,10 @@ const byte buttonPin = 4;
 const byte switchPin = 7;
 bool ButtonFlag = false;
 bool SwitchFlag = true;
-int correct;
-int score;
-int blank;
+byte correct;
+byte score;
+byte blank;
+byte spinSpeed = 500;
 
 
 void setup() {
@@ -35,26 +36,20 @@ void loop() {
   if (ButtonFlag) {
     if (score == correct) {
       for (int i = 0; i < 10; ++i) {
-        CircuitPlayground.setPixelColor(i, 255, 255, 255);
-        }
-      } else {
-        for (int i = 0; i < 10; ++i) {
-        CircuitPlayground.setPixelColor(i, 255, 0, 0);
-        }
+        CircuitPlayground.setPixelColor(i, 255, 255, 255); }
+      } else { for (int i = 0; i < 10; ++i) {
+        CircuitPlayground.setPixelColor(i, 255, 0, 0); }
       }
-    } else {
-      for (int i = 0; i < 10; ++i) {
+    } else { for (int i = 0; i < 10; ++i) {
+        if (ButtonFlag) {
+          break; }
         blank = (i+9)%10;
         score = i;
         CircuitPlayground.setPixelColor(i, 100, 100, 100);
         if (blank != correct) {
-          CircuitPlayground.setPixelColor(blank, 0, 0, 0);
-        } else {
-          CircuitPlayground.setPixelColor(correct, 15, 15, 15);
-        }
+          CircuitPlayground.setPixelColor(blank, 0, 0, 0); } else {
+          CircuitPlayground.setPixelColor(correct, 15, 15, 15); }
         Serial.println(score);
-        delay(200);
-      }
+        delay(spinSpeed); }
   }
-
 }

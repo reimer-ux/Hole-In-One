@@ -1,13 +1,14 @@
 # Hole-In-One!
 
-A simple timing-based game for the [Arduino Circuit Playground Express](https://store.arduino.cc/products/circuit-playground-express).
+A simple timing-based game for the [Arduino Circuit Playground Express](https://store.arduino.cc/products/circuit-playground-express). Can you master all five stages?
 
-Drop the ball into the highlight "hole" to win! To begin, press the the right button, which starts the game. The ball spins in a circle, and the user needs to press the right button to stop it. If it's not on the highlighted section, you lose! If it is, you move on to the next difficulty! There are three difficulties, starting with easy, normal, hard, and extreme. If you pass the extreme level, you win. Good luck!
+Drop the ball into the highlight "hole" to win! The game begins once powered on. There are five stages to get through, but be cautious! You only have five lives. The ball spins in a circle, and the user needs to press either the right or left button button to stop it. If it's not on the highlighted section, you lose a life! If it is, you move on to the next stage! There are five difficulties, each ramping up in speed. If you pass the extreme level, you win. Good luck!
 
-If the sound effects and brightness are annoying, flip the switch to enable *night mode*, which decreases the overall brightness and mutes the speaker.
+If the jingles and brightness are annoying, flip the switch to enable *night mode*, which decreases the overall brightness and mutes the speaker.
 
 ### Inputs
 
+- Left button `D4`
 - Right button `D5`
 - Slide switch `D7`
 
